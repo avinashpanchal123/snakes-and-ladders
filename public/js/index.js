@@ -115,4 +115,57 @@ function createPlayers(n){
   
  }
  console.log(players);
+
+
+}
+
+
+
+
+// here is code for handling dice
+
+let dice_img_div = document.querySelector(".dice_img_div");
+
+let result = document.querySelector("#result");
+
+let toss = document.getElementById("toss");
+
+
+
+toss.onclick = () => {
+
+  Decision();
+  
+};
+
+function Decision() {
+   let d1 = Math.floor(Math.random() * 6) + 1;
+  
+  player = players[turn];
+  
+  let timer = setTimeout(() => {
+    result.src = "./images/dice/dice" + d1 + ".png";
+    if (flags_arr[turn] == true) {
+      // oddRowHandler(d1, player, turn);
+      if( d1 == 6){
+        turn = turn % players.length;
+      }
+      else{
+        turn++;
+        turn = turn % players.length;
+      }
+    } 
+    else {
+      // evenRowHandler(d1, player, turn);
+      if( d1 == 6){
+        turn = turn % players.length;
+      }
+      else{
+        turn++;
+      turn = turn % players.length;
+      }
+    }
+    
+    dice_img_div.style.visibility = "visible";
+  }, 500);
 }

@@ -69,27 +69,23 @@
     margin: auto;
     border: 2px solid gray;
   }
+
   
-  .dice_wrapper div:nth-child(1){
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 10%;
-  }
-  
-  .dice_wrapper div:nth-child(2){
-    
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .players{
-    cursor: pointer;
-  }
+   #toss{
+     width: 5rem;
+     height: 2rem;
+     background-color: #13e0d6;
+     margin: 00.5rem auto;
+     text-align: center;
+     border-radius: 1rem;
+     display: block;
+   }
   
   .dice_img_div{
     width: 30%;
     height: 15vh;
     border: 2px solid black;
+    margin: 2rem auto;
     visibility: hidden;
   }
   
