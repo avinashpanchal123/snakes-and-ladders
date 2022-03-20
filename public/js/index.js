@@ -1,3 +1,14 @@
+import {
+  small_ladder,
+  big_ladder,
+  medium_ladder,
+  medium_ladder01,
+  small_ladder01,
+} from "./ladderFunctions.js";
+
+
+
+
 // here appending all the cells on the board
 
 let board_container = document.getElementById("board_container");
@@ -138,8 +149,9 @@ toss.onclick = () => {
 };
 
 function Decision() {
-   let d1 = Math.floor(Math.random() * 6) + 1;
-  
+  //  let d1 = Math.floor(Math.random() * 6) + 1;
+  let d1 = 1;
+  toss.style.visibility = "hidden"
   player = players[turn];
   
   let timer = setTimeout(() => {
@@ -164,9 +176,9 @@ function Decision() {
       turn = turn % players.length;
       }
     }
-    
+    toss.style.visibility = "visible"
     dice_img_div.style.visibility = "visible";
-  }, 500);
+  }, 1000);
 }
 
 
@@ -195,6 +207,30 @@ function oddRowHandler(moves_right, p, turn) {
     }
   }
   console.log([pX_arr[turn], pY_arr[turn]]);
+
+  if (pY_arr[turn] == 0 && pX_arr[turn] == 10.5) {
+
+    [pX_arr[turn], pY_arr[turn]]  = small_ladder(pX_arr[turn],pY_arr[turn]);
+    console.log(pX_arr[turn], pY_arr[turn]);
+     translateHandling(pX_arr[turn], pY_arr[turn], p)
+     flags_arr[turn] = false;
+    
+   }
+   else
+   if (pY_arr[turn] == -7 && pX_arr[turn] == 24.5) {
+
+    [pX_arr[turn], pY_arr[turn]] = big_ladder(pX_arr[turn], pY_arr[turn]);
+    alert( [pX_arr[turn], pY_arr[turn]] );
+    translateHandling(pX_arr[turn], pY_arr[turn], p)
+    flags_arr[turn] = true;
+  } 
+
+   else 
+  if (pX_arr[turn] == 21 && pY_arr[turn] == -21) {
+    [pX_arr[turn], pY_arr[turn]] = medium_ladder(pX_arr[turn], pY_arr[turn])
+    translateHandling(pX_arr[turn], pY_arr[turn], p)
+    flags_arr[turn] = false;
+  } 
 
 }
 
@@ -228,6 +264,19 @@ function evenRowHandler(moves_left, p, turn) {
   }
 
   console.log([pX_arr[turn], pY_arr[turn]]);
+
+    if (pX_arr[turn] == 7 &&  pY_arr[turn] == -10.5) {
+    [pX_arr[turn],  pY_arr[turn]] =  medium_ladder01(pX_arr[turn],  pY_arr[turn]);
+    translateHandling(pX_arr[turn], pY_arr[turn], p)
+    flags_arr[turn] = true;
+  }
+  else
+
+   if (pX_arr[turn] == 31.5 && pY_arr[turn] == -10.5) {
+    [pX_arr[turn], pY_arr[turn]]  = small_ladder01(pX_arr[turn], pY_arr[turn]);
+    translateHandling(pX_arr[turn], pY_arr[turn], p)
+   flags_arr[turn] = false;
+  }
 
 }
 
