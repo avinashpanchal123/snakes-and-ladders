@@ -261,3 +261,63 @@
     left: 33.5rem;
     transform: rotate(-30deg);
   }
+
+
+  /* here is the style for the players */
+
+   
+  #p1{
+    position: absolute;
+    left: 0.7rem;
+    top : 32rem;
+    width: 2rem;
+    height: 2rem;
+    z-index: 4;
+    background-color: red;
+    border-radius: 50%;
+    transform: translate();
+    text-align: center;
+    /* transition: 2s; */
+  }
+
+  #p2{
+    position: absolute;
+    left: 0.7rem;
+    top : 32rem;
+    width: 2rem;
+    height: 2rem;
+    z-index: 3;
+    background-color: blue;
+    border-radius: 50%;
+    transform: translate();
+    text-align: center;
+    /* transition: 2s; */
+  }
+
+  #p3{
+    position: absolute;
+    left: 0.7rem;
+    top : 32rem;
+    width: 2rem;
+    height: 2rem;
+    z-index: 2;
+    background-color: yellow;
+    border-radius: 50%;
+    transform: translate();
+    text-align: center;
+    /* transition: 2s; */
+  }
+  #p4{
+    position: absolute;
+    left: 0.7rem;
+    top : 32rem;
+    width: 2rem;
+    height: 2rem;
+    z-index: 1;
+    background-color: green;
+    border-radius: 50%;
+    transform: translate();
+    text-align: center;
+    /* transition: 2s; */
+  }
+

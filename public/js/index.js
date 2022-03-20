@@ -44,6 +44,24 @@ makeBoard()
 
 
 
+
+
+
+
+// here is logic for the choosing number of players
+
+let n = 4;  // default value of number of players
+
+let options = document.querySelectorAll(".options");
+
+options.forEach((el)=>{
+  el.onclick = ()=>{
+    n = +el.id;
+    el.style.background = "#07423f"
+  }
+})
+
+
 // here is function for bgm  modal visiblility handling
 
 let play_btn  = document.getElementById("play_btn");
@@ -56,9 +74,45 @@ play_btn.onclick = ()=>{
 
 function playSound(url) {
   const audio = new Audio(url);
+  console.log(n);
   modal.style.display = "none"
-  audio.play();
+  // audio.play();
+  createPlayers(n)
 }
 
 
+// creating players and postions arrays 
 
+
+let players = [];
+
+let players_container = document.getElementById("players_container");
+
+let pX_arr = [];
+let pY_arr = [];
+let flags_arr = []
+
+let turn = 0;
+let player;
+
+
+function createPlayers(n){
+  for (let i = 0; i < n; i++) {
+  let p =  document.createElement("div")
+
+  p.setAttribute("id", `p${(i+1).toString()}`);
+
+  pX_arr.push(0);
+
+  pY_arr.push(0);
+
+  flags_arr.push(true)
+
+  p.innerText = `p${i+1}`
+
+  players_container.appendChild(p);
+  players.push(p)
+  
+ }
+ console.log(players);
+}
