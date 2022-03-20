@@ -1,0 +1,96 @@
+* {
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+    font-family: "Arvo", cursive;
+  }
+  
+  body {
+    position: relative;
+    background-color: #283149;;
+  }
+  
+  .main_container {
+    width: 100%;
+    height: 100vh;
+    border: 2px solid black;
+    display: flex;
+  }
+  
+  .board_player_wrapper{
+    margin-left: 1rem;
+    margin-top: 1rem;
+    width: 35rem;
+    height: 35rem;
+    /* border: 2px solid black; */
+    position: relative;
+  }
+  
+  #board_container {
+    
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    box-shadow: inset 0 -3px 0 0 #f9f7fb;
+  }
+  
+  .rows {
+    width: 100%;
+    height: 4rem;
+    display: flex;
+    /* border: 2px solid black; */
+  }
+  
+  .cell {
+    width: 4rem;
+    height: 100%;
+    color: white;
+    border: 2px solid blue;
+  }
+
+
+
+   /* style for dice container */
+  
+   .dice_container{
+    width: 50%;
+    height: 100%;
+  }
+  
+  .dice_wrapper{
+    width:  50%;
+    height:  30%;
+    margin: auto;
+    border: 2px solid gray;
+  }
+  
+  .dice_wrapper div:nth-child(1){
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10%;
+  }
+  
+  .dice_wrapper div:nth-child(2){
+    
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .players{
+    cursor: pointer;
+  }
+  
+  .dice_img_div{
+    width: 30%;
+    height: 15vh;
+    border: 2px solid black;
+    visibility: hidden;
+  }
+  
+  .dice_img_div img{
+    width: 100%;
+    
+  }
+  
