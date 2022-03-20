@@ -94,3 +94,71 @@
     
   }
   
+
+  /* stylying for modal */
+
+  #modal{
+    width: 30%;
+    height: 25rem;
+    padding: 2rem 1%;
+    text-align: center;
+    margin: auto;
+    position: absolute;
+    top: 20vh;
+    left: 35%;
+    background-color: #d11d26;
+    border-radius: 1rem;
+    z-index: 50;
+    box-shadow: -1rem -0.4rem 3rem 2rem yellow;
+  }
+
+  #modal img{
+    width: 90%;
+  }
+
+
+  .P-btn{
+    width: 3rem;
+    margin: 1rem;
+  }
+
+  .modal_heading{
+    margin-bottom: 1rem;
+    color: yellow;
+  }
+
+
+  .selectin_container{
+    display: flex;
+    width: 60%;
+    margin: 1rem auto;
+    justify-content: space-between;
+
+  }
+
+  .selectin_container div{
+    width: 23%;
+    border: 0.1rem solid yellow;
+    background-color: 	 #4eb1ac;
+    border-radius: 0.5rem;
+    color: wheat;
+    letter-spacing: 0.1rem;
+    font-size: large;
+    padding: 0.5rem;
+    cursor: pointer;
+  }
+
+  .hover_btn:hover{
+    transform: scale(1.3);
+    transition: 0.5s;
+  }
+
+  #play_btn{
+    width: 25%;
+    padding: 0.2rem;
+    font-size: large;
+    border-radius: 0.5rem;
+    background-color:#13e0d6;
+    color: white;
+    border: 0.1rem solid yellow;
+  }
