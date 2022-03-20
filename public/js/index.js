@@ -40,3 +40,25 @@ function makeBoard(){
 }
 
 makeBoard()
+
+
+
+
+// here is function for bgm  modal visiblility handling
+
+let play_btn  = document.getElementById("play_btn");
+
+let modal = document.getElementById("modal")
+
+play_btn.onclick = ()=>{
+  playSound("sounds/bgm.mp3")
+}
+
+function playSound(url) {
+  const audio = new Audio(url);
+  modal.style.display = "none"
+  audio.play();
+}
+
+
+

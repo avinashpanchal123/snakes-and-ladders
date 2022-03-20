@@ -5,13 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>snakes-and-ladders</title>
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <div class="main_container">
 
         <div class="board_player_wrapper">
-          <div id="board_container">
+          <div class="display_flex" id="board_container">
               
           </div>
       
@@ -37,7 +38,7 @@
       <div id="modal">
         <h3 class="modal_heading">CHOOSE NUMBER OF PLAYERS</h3>
         <div><img src="images/dash-board.jpeg" alt=""></div>
-         <div class="selectin_container">
+         <div class="selectin_container display_flex">
            <div class="options hover_btn">2P</div>
            <div class="options hover_btn">3P</div>
            <div class="options hover_btn">4P</div>
@@ -45,6 +46,27 @@
         <div><button class="hover_btn"  id="play_btn">Play</button></div>
       </div>
   
+
+      <div class="snake_images">
+        <img class="snake" id="long" src="images/snakes/long.png" alt="">
+        <img class="snake" id="leftSide" src="images/snakes/leftSide.png" alt="">
+        <img class="snake" id="medium" src="images/snakes/medium.png" alt="">
+        <img class="snake" id="medium2" src="images/snakes/medium2.png" alt="">
+        <img class="snake" id="solong" src="images/snakes/solong.png" alt="">
+    </div>
+
+    <div class="ladder_images">
+        <img class="ladder" id="big_ladder" src="images/ladders/big_ladder.png" alt="">
+        <img class="ladder" id="medium_ladder" src="images/ladders/medium_ladder.png" alt="">
+        <img class="ladder" id="small_ladder" src="images/ladders/small_ladder.png" alt="">
+        <img class="ladder" id="medium_ladder01" src="images/ladders/medium_ladder01.png" alt="" >
+        <img class="ladder" id="small_ladder01" src="images/ladders/small_ladder01.png" alt="">
+        
+    </div>
+
+    <audio autoplay>
+      <source src="sounds/bgm.mp3" type="audio/mpeg">
+    </audio>
     
 </body>
 </html>

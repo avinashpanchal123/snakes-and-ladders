@@ -4,6 +4,10 @@
     box-sizing: border-box;
     font-family: "Arvo", cursive;
   }
+
+  .display_flex{
+    display: flex;
+  }
   
   body {
     position: relative;
@@ -31,7 +35,7 @@
     width: 100%;
     height: 100%;
     /* border: 1px solid red; */
-    display: flex;
+    /* display: flex; */
     flex-direction: column;
     box-shadow: inset 0 -3px 0 0 #f9f7fb;
   }
@@ -129,7 +133,7 @@
 
 
   .selectin_container{
-    display: flex;
+    /* display: flex; */
     width: 60%;
     margin: 1rem auto;
     justify-content: space-between;
@@ -161,4 +165,99 @@
     background-color:#13e0d6;
     color: white;
     border: 0.1rem solid yellow;
+  }
+
+
+
+/* style to add snakes and ladders images */
+
+.snake {
+  position: absolute;
+  transform-origin: center bottom;
+}
+
+#solong {
+  width: 3.4rem;
+  top: 1rem;
+  left: 1.5rem;
+  transform: rotate(15deg);
+  z-index: 3;
+}
+
+#long {
+  width: 3.2rem;
+  top: 5rem;
+  left: 19rem;
+  transform: rotate(38deg);
+}
+
+#medium {
+  width: 10rem;
+  top: 23rem;
+  left: 9rem;
+  transform: rotate(15deg);
+}
+
+#leftSide {
+  width: 5rem;
+  top: 2.5rem;
+  left: 9rem;
+  transform: rotate(-33deg);
+  z-index: 5;
+}
+
+#medium2 {
+  width: 11rem;
+  top: 7rem;
+  left: 23rem;
+  transform: rotate(-30deg);
+  z-index: 2;
+}
+
+
+.ladder{
+    position: absolute;
+    transform-origin: center bottom;
+}
+
+
+
+#big_ladder {
+    width: 2.5rem;
+    height: 25rem;
+    top: 2rem;
+    left: 26rem;
+    transform: rotate(-35deg);
+  }
+  
+  #small_ladder {
+    width: 2.5rem;
+    height: 11rem;
+    top: 23.5rem;
+    left: 12rem;
+    transform: rotate(70deg);
+  }
+  
+  #medium_ladder {
+    width: 2.4rem;
+    height: 13rem;
+    top: 1rem;
+    left: 22rem;
+    transform: rotate(37deg);
+  }
+  
+  #medium_ladder01 {
+    width: 2.4rem;
+    height: 13rem;
+    top: 11rem;
+    left: 9rem;
+    transform: rotate(-35deg);
+  }
+  
+  #small_ladder01 {
+    width: 2.5rem;
+    height: 9rem;
+    top: 15.5rem;
+    left: 33.5rem;
+    transform: rotate(-30deg);
   }
