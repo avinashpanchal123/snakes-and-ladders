@@ -7,7 +7,13 @@ import {
 } from "./ladderFunctions.js";
 
 
+import { leftSide_snake,
+   medium_snake,
+    long_snake, 
+    soLong_snake,
+     medium2_snake}
 
+from "./snakeFunctions.js"
 
 // here appending all the cells on the board
 
@@ -79,17 +85,20 @@ let play_btn  = document.getElementById("play_btn");
 
 let modal = document.getElementById("modal")
 
+let bgm = document.getElementById("bgm")
 play_btn.onclick = ()=>{
   playSound("sounds/bgm.mp3")
+  
 }
 
 function playSound(url) {
-  const audio = new Audio(url);
+  bgm.play()
   console.log(n);
   modal.style.display = "none"
   // audio.play();
   createPlayers(n)
 }
+
 
 
 // creating players and postions arrays 
@@ -231,6 +240,13 @@ function oddRowHandler(moves_right, p, turn) {
     translateHandling(pX_arr[turn], pY_arr[turn], p)
     flags_arr[turn] = false;
   } 
+  else 
+  if (pX_arr[turn] == 0 && pY_arr[turn] == -28) {
+    [pX_arr[turn], pY_arr[turn]] = leftSide_snake(pX_arr[turn], pY_arr[turn])
+    translateHandling(pX_arr[turn], pY_arr[turn], p)
+    flags_arr[turn] = false;
+  }
+
 
 }
 
@@ -278,6 +294,39 @@ function evenRowHandler(moves_left, p, turn) {
    flags_arr[turn] = false;
   }
 
+    else
+
+  if (pX_arr[turn] == 10.5 && pY_arr[turn] == -10.5) {
+   [pX_arr[turn], pY_arr[turn]] = medium_snake(pX_arr[turn], pY_arr[turn]);
+    translateHandling(pX_arr[turn], pY_arr[turn], p)
+    flags_arr[turn] = true;
+  }
+
+
+  else
+
+  if (pX_arr[turn] == 31.5 && pY_arr[turn] == -24.5) {
+    [pX_arr[turn], pY_arr[turn]] = long_snake(pX_arr[turn], pY_arr[turn])
+    translateHandling(pX_arr[turn], pY_arr[turn], p)
+  flags_arr[turn] = true;
+  }
+
+   else
+
+  if (pX_arr[turn] == 7 && pY_arr[turn] == -31.5) {
+    [pX_arr[turn], pY_arr[turn]] = soLong_snake(pX_arr[turn], pY_arr[turn])
+    translateHandling(pX_arr[turn], pY_arr[turn], p)
+    flags_arr[turn] = false;
+  }
+
+ else
+
+   if (pX_arr[turn] == 17.5 && pY_arr[turn] == -24.5) {
+    [pX_arr[turn], pY_arr[turn]] = medium2_snake(pX_arr[turn], pY_arr[turn]);
+    translateHandling(pX_arr[turn], pY_arr[turn], p)
+    flags_arr[turn] = false;
+  }
+
 }
 
 
@@ -286,3 +335,22 @@ function evenRowHandler(moves_left, p, turn) {
 function translateHandling(pX, pY, player) {
   player.style.transform = `translate(${pX}rem,${pY}rem)`;
 }
+
+
+
+function go_to_Home(moves_left, p, turn) {
+ 
+  let move = moves_left * 3.5;
+  
+  alert(pX_arr[turn]);
+
+  if (pX_arr[turn] - move == 0) {
+    pX_arr[turn] = pX_arr[turn] - move;
+    translateHandling(pX_arr[turn],pY_arr[turn], p)
+    alert(`p${turn+1} wins the game`);
+  } else if (pX_arr[turn] - move > 0) {
+    pX_arr[turn] = pX_arr[turn] - move;
+    translateHandling(pX_arr[turn],pY_arr[turn], p) 
+   }
+}
+
