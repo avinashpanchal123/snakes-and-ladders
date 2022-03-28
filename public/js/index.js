@@ -74,6 +74,9 @@ let options = document.querySelectorAll(".options");
 options.forEach((el)=>{
   el.onclick = ()=>{
     n = +el.id;
+    for (let i = 0; i < options.length; i++) {
+       options[i].style.background = "#4eb1ac"
+    }
     el.style.background = "#07423f"
   }
 })
@@ -89,14 +92,6 @@ let bgm = document.getElementById("bgm")
 play_btn.onclick = ()=>{
   playSound("sounds/bgm.mp3")
   
-}
-
-function playSound(url) {
-  bgm.play()
-  console.log(n);
-  modal.style.display = "none"
-  // audio.play();
-  createPlayers(n)
 }
 
 
@@ -121,6 +116,7 @@ function createPlayers(n){
   let p =  document.createElement("div")
 
   p.setAttribute("id", `p${(i+1).toString()}`);
+  p.classList.add("players")
 
   pX_arr.push(0);
 
@@ -149,6 +145,7 @@ let result = document.querySelector("#result");
 
 let toss = document.getElementById("toss");
 
+toss.disabled  = true;
 
 
 toss.onclick = () => {
@@ -158,8 +155,8 @@ toss.onclick = () => {
 };
 
 function Decision() {
-  //  let d1 = Math.floor(Math.random() * 6) + 1;
-  let d1 = 1;
+   let d1 = Math.floor(Math.random() * 6) + 1;
+  
   toss.style.visibility = "hidden"
   player = players[turn];
   
@@ -169,10 +166,12 @@ function Decision() {
       oddRowHandler(d1, player, turn);
       if( d1 == 6){
         turn = turn % players.length;
+        
       }
       else{
         turn++;
         turn = turn % players.length;
+        
       }
     } 
     else {
@@ -185,9 +184,11 @@ function Decision() {
       turn = turn % players.length;
       }
     }
+    toss.innerText = `p${turn+1}`
     toss.style.visibility = "visible"
     dice_img_div.style.visibility = "visible";
   }, 1000);
+  
 }
 
 
@@ -229,7 +230,7 @@ function oddRowHandler(moves_right, p, turn) {
    if (pY_arr[turn] == -7 && pX_arr[turn] == 24.5) {
 
     [pX_arr[turn], pY_arr[turn]] = big_ladder(pX_arr[turn], pY_arr[turn]);
-    alert( [pX_arr[turn], pY_arr[turn]] );
+    // alert( [pX_arr[turn], pY_arr[turn]] );
     translateHandling(pX_arr[turn], pY_arr[turn], p)
     flags_arr[turn] = true;
   } 
@@ -337,20 +338,50 @@ function translateHandling(pX, pY, player) {
 }
 
 
+let ranking = 1;
+let suffix;
 
 function go_to_Home(moves_left, p, turn) {
  
   let move = moves_left * 3.5;
   
-  alert(pX_arr[turn]);
+  // alert(pX_arr[turn]);
 
   if (pX_arr[turn] - move == 0) {
     pX_arr[turn] = pX_arr[turn] - move;
-    translateHandling(pX_arr[turn],pY_arr[turn], p)
-    alert(`p${turn+1} wins the game`);
+    translateHandling(pX_arr[turn],pY_arr[turn], p);
+
+    if( ranking == 1){
+      suffix = "st"
+    }
+    else if( ranking == 2){
+      suffix = "nd"
+    }
+    else if( ranking == 3){
+      suffix = "rd"
+    }
+    else{
+      suffix = "th"
+    }
+    
+    alert(`Congratulations p${turn+1} you are ${ranking++} ${suffix}`);
   } else if (pX_arr[turn] - move > 0) {
     pX_arr[turn] = pX_arr[turn] - move;
     translateHandling(pX_arr[turn],pY_arr[turn], p) 
    }
 }
 
+
+
+
+
+
+
+function playSound(url) {
+  bgm.play()
+  console.log(n);
+  modal.style.display = "none"
+  // audio.play();
+  createPlayers(n)
+  toss.disabled = false;
+}

@@ -77,6 +77,9 @@
      background-color: #13e0d6;
      margin: 00.5rem auto;
      text-align: center;
+     color: #283149;
+     font-size: large;
+     font-weight: 900;
      border-radius: 1rem;
      display: block;
    }
@@ -84,14 +87,14 @@
   .dice_img_div{
     width: 30%;
     height: 15vh;
-    border: 2px solid black;
+    /* border: 2px solid black; */
     margin: 2rem auto;
     visibility: hidden;
   }
   
   .dice_img_div img{
     width: 100%;
-    
+     z-index: 20;
   }
   
 
@@ -317,3 +320,6 @@
     /* transition: 2s; */
   }
 
+.players{
+  transition: 1s;
+}
