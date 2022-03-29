@@ -22,7 +22,7 @@ Building the Snakes and Ladders Game .in using ejs CSS,Javascript, express js an
 
 ## Used libraries
 <ul>
-  <li>Font awesome</li>
+
   <li>Google fonts</li>
    <li>npm packages</li>
   
