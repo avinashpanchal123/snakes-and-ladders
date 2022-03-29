@@ -7,7 +7,7 @@ Building the Snakes and Ladders Game .in using ejs CSS,Javascript, express js an
   <li>Clone the repo and run the app.</li>
   <ul>
     <li>https://github.com/avinashpanchal123/snakes-and-ladders/</li>
-    <li>Execute the porter home.ejs using localhost:2233, and enjoy the Game</li>
+    <li>Run npm start command after installing all dependancies and Execute the Snakes and Ladder game using localhost:2233, and enjoy the Game</li>
     <li>deployment link :https://snakes-and-ladders1.herokuapp.com/</li>
   </ul>
 </ul>
