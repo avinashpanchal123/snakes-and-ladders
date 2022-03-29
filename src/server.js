@@ -1,5 +1,7 @@
 const app = require('./index');
 
-app.listen(2233, ()=>{
+const port = process.env.PORT || 2233
+
+app.listen(port, ()=>{
     console.log("listening on port 2233");
 })
