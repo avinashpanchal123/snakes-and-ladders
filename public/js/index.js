@@ -84,6 +84,9 @@ options.forEach((el)=>{
 
 // here is function for bgm  modal visiblility handling
 
+
+let animation_div = document.getElementById("animation_div");
+
 let play_btn  = document.getElementById("play_btn");
 
 let modal = document.getElementById("modal")
@@ -91,7 +94,6 @@ let modal = document.getElementById("modal")
 let bgm = document.getElementById("bgm")
 play_btn.onclick = ()=>{
   playSound("sounds/bgm.mp3")
-  
 }
 
 
@@ -345,12 +347,11 @@ function go_to_Home(moves_left, p, turn) {
  
   let move = moves_left * 3.5;
   
-  // alert(pX_arr[turn]);
-
   if (pX_arr[turn] - move == 0) {
     pX_arr[turn] = pX_arr[turn] - move;
     translateHandling(pX_arr[turn],pY_arr[turn], p);
 
+    restartGame(pX_arr, pY_arr)
     if( ranking == 1){
       suffix = "st"
     }
@@ -384,4 +385,22 @@ function playSound(url) {
   // audio.play();
   createPlayers(n)
   toss.disabled = false;
+}
+
+
+
+function restartGame(pX_arr, pY_arr){
+  let count = 0;
+  for (let i = 0; i < pX_arr.length; i++) {
+     if( pX_arr[i] == 0 && pY_arr[i] == -31.5){
+       count++
+     }
+  }
+  if( count == pX_arr.length){
+
+    animation_div.style.display = "block"
+    setTimeout(()=>{
+      window.location.reload()
+    }, 12000)
+  }
 }
