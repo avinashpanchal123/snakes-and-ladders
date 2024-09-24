@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-    <h1>💰 Money Control App</h1>
+     <h1>🐍🎲 Snakes and Ladders Game 🪜🐍</h1>
     <p>Money Control is a personal finance management tool that helps users track their income and expenses across various categories. It provides a detailed analysis of your spending habits, allowing you to make informed financial decisions. The app also visualizes expense data using interactive charts.</p>
     <h2>🌐 Deployed Link</h2>
     <p>You can check out the live app <a href="https://snakes-and-ladders-zbrz.onrender.com/" target="_blank" rel="noopener noreferrer">here</a>.</p>
@@ -39,14 +39,7 @@ npm install</code></pre>
     <h4>Frontend</h4>
     <pre><code>cd frontend
 npm install</code></pre>
-    <h3>3. Set up MySQL Database</h3>
-    <p>Create a MySQL database and configure the connection details in <code>backend/config/db.js</code>:</p>
-    <pre><code>module.exports = {
-    host: 'localhost',
-    user: 'your-username',
-    password: 'your-password',
-    database: 'money_control'
-};</code></pre>
+  </pre>
     <h3>4. Configure Environment Variables</h3>
     <p>Create a <code>.env</code> file in the <code>backend</code> folder to define your environment variables:</p>
     <pre><code># .env file
