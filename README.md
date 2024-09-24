@@ -38,17 +38,7 @@ cd money-control</code></pre>
 npm install</code></pre>
     <h4>Frontend</h4>
     <pre><code>cd frontend
-npm install</code></pre>
-  </pre>
-    <h3>4. Configure Environment Variables</h3>
-    <p>Create a <code>.env</code> file in the <code>backend</code> folder to define your environment variables:</p>
-    <pre><code># .env file
-PORT=5000
-JWT_SECRET=your_jwt_secret
-DB_HOST=localhost
-DB_USER=your_username
-DB_PASS=your_password
-DB_NAME=money_control</code></pre>
+npm install</code>
     <h3>5. Run the Application</h3>
     <h4>Backend</h4>
     <pre><code>npm start</code></pre>
@@ -56,23 +46,7 @@ DB_NAME=money_control</code></pre>
     <pre><code>npm start</code></pre>
     <h3>6. Access the App</h3>
     <p>Visit <a href="http://localhost:3000" target="_blank">http://localhost:3000</a> in your browser to start using the Money Control app.</p>
-    <h2>📊 Features Overview</h2>
-    <h3>1. Dashboard</h3>
-    <ul>
-        <li>Overview of income and expenses for the current month.</li>
-        <li>Displays charts (pie and bar charts) representing category-wise expense analysis.</li>
-    </ul>
-    <h3>2. Add Transaction</h3>
-    <ul>
-        <li>Add new transactions by specifying the amount, category, and description.</li>
-        <li>Choose between income and expense.</li>
-    </ul>
-    <h3>3. Expense Analysis</h3>
-    <ul>
-        <li>View a detailed breakdown of your spending by category.</li>
-        <li>Interactive donut chart with category labels and total spent values.</li>
-    </ul>
-    <h3>4. File Upload</h3>
+    
     <p>Upload bank transaction files in CSV format to update your transactions.</p>
 </body>
 </html>
